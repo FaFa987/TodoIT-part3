@@ -1,8 +1,9 @@
 package se.lexicon.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Person {
+public class Person implements Serializable {
     //private static int sequencer = 0;
     private int id;
     private String firstName;
