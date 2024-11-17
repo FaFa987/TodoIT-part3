@@ -11,6 +11,9 @@ public class Person implements Serializable {
     private String email;
 
     public Person(int id, String firstName, String lastName, String email) {
+        if (firstName == null || lastName == null || email == null) {
+            throw new IllegalArgumentException("Fields cannot be null");
+        }
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -49,4 +52,29 @@ public class Person implements Serializable {
     public String getSummary(){
         return "Id: " + id + ", Name: " + firstName + " " + lastName + ", Email: " + email;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return id == person.id && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, email);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+
 }
