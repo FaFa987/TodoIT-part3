@@ -9,9 +9,7 @@ public class AppUserDAOImpl implements AppUserDAO {
 
     private Collection<AppUser> appUsers = new HashSet<>();
 
-    public AppUserDAOImpl(Collection<AppUser> users) {
-        this.appUsers = users;
-    }
+
 
     @Override
     public AppUser persist(AppUser appUser){

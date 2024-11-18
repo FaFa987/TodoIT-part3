@@ -10,4 +10,6 @@ public interface AppUserDAO {
     AppUser findByUsername(String username);
     Collection<AppUser> findAll();
     void remove(String username);
+
 }
+
