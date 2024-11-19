@@ -67,12 +67,13 @@ public class TodoItemDAOImpl implements TodoItemDAO {
 
     @Override
     public Collection<TodoItem> findByDeadlineBefore(LocalDate date) {
-        for (TodoItem todoItem : todoItems) {
+        Collection<TodoItem> todoItems = new HashSet<>();
+        for (TodoItem todoItem : this.todoItems) {
             if(todoItem.getDeadLine().isBefore(date)){
-                return todoItems;
+                todoItems.add(todoItem);
             }
         }
-        return null;
+        return todoItems;
     }
 
     @Override
