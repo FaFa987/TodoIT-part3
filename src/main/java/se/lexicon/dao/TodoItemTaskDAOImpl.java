@@ -1,5 +1,6 @@
 package se.lexicon.dao;
 
-public class TodoItemTaskDAOImpl {
+public class TodoItemTaskDAOImpl implements TodoItemTaskDAO {
+
 
 }
