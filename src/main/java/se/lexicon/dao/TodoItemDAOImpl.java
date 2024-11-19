@@ -39,7 +39,7 @@ public class TodoItemDAOImpl implements TodoItemDAO {
     public boolean findAllByDoneStatus(boolean done) {
         for (TodoItem todoItem : todoItems) {
             if (todoItem.isDone() == done) {
-                return true;
+                return done;
             }
         }
         return false;
