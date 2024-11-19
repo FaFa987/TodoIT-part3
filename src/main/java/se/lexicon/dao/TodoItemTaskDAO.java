@@ -8,7 +8,7 @@ public interface TodoItemTaskDAO {
     TodoItemTask persis(TodoItemTask todoItemTask);
     TodoItemTask findById(int id);
     Collection<TodoItemTask> findAll();
-    Collection<TodoItemTask> findByAssignStatus(String status);
+    String findByAssignStatus(String status);
     Collection<TodoItemTask> findByPersonId(int personId);
     void remove(int id);
 
